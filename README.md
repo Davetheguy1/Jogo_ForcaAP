@@ -1,12 +1,14 @@
 # ForcaAP
-## DescriÁ„o
-Um jogo da forca simples, O qual da ao usu·rio um maximo de 5 erros para encontrar a palavra, feito para a Academia do Programador
+## Descri√ß√£o
+Um jogo da forca simples, O qual da ao usu√°rio um maximo de 5 erros para encontrar a palavra, feito para a Academia do Programador
 ## Funcionalidade
-ApÛs uma palavra ser escolhida, o usu·rio deve tentar adivinha-l·, podendo cometer um m·ximo de 5 erros no processo.
-## CrÈditos
+Ap√≥s uma palavra ser escolhida, o usu√°rio deve tentar adivinha-l√°, podendo cometer um m√°ximo de 5 erros no processo.
+## Cr√©ditos
+C√≥digo projetado por Tiago Santini (https://github.com/tiagosantini)
+
 Programa feito por Danilo Cenci (https://github.com/Davetheguy1)
 
-Agradecimentos ‡
+Agradecimentos √†
 
 Tiago Santini, da Academia do Programador (https://github.com/tiagosantini)
 
