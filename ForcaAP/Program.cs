@@ -4,52 +4,28 @@ namespace ForcaAP
 {
     internal class Program
     {
-        static void Main(string[] args)
+        
+        static void MainProgram()
         {
-            string[] possibleWords =
+            Console.WriteLine("Jogo da Forca\n\n1.Jogar\n2.Sair");
+            string answer = Console.ReadLine();
+            if (answer == "1")
             {
-                "ABACATE",
-                "ABACAXI",
-                "ACEROLA",
-                "ACAI",
-                "ARACA",
-                "ABACATE",
-                "BACABA",
-                "BACURI",
-                "BANANA",
-                "CAJA",
-                "CAJU",
-                "CARAMBOLA",
-                "CUPUACU",
-                "GRAVIOLA",
-                "GOIABA",
-                "JABUTICABA",
-                "JENIPAPO",
-                "MACA",
-                "MANGABA",
-                "MANGA",
-                "MARACUJA",
-                "MURICI",
-                "PEQUI",
-                "PITANGA",
-                "PITAYA",
-                "SAPOTI",
-                "TANGERINA",
-                "UMBU",
-                "UVA",
-                "UVAIA"
-            };
-
-            Random randGenerator = new Random();
-
-            int chosenIdx = randGenerator.Next(possibleWords.Length);
-
-            string chosenWord = possibleWords[chosenIdx];
-           
+                Game();
+            } else if (answer == "2")
+            {
+                Environment.Exit(0);
+            }
+        }
+        
+        
+        static void Game()
+        {
+            string chosenWord = Forca.WordSelector();
 
             char[] foundChars = new char[chosenWord.Length];
 
-            for(int currentChar = 0; currentChar < foundChars.Length; currentChar++)
+            for (int currentChar = 0; currentChar < foundChars.Length; currentChar++)
             {
                 foundChars[currentChar] = '_';
             }
@@ -58,8 +34,6 @@ namespace ForcaAP
             int wrongGuesses = 0;
             bool rightGuessWord = false;
             bool gameOver = false;
-            
-
 
             do
             {
@@ -87,8 +61,8 @@ namespace ForcaAP
                 Console.WriteLine("_|____                 ");
                 Console.WriteLine("Erros = " + wrongGuesses + "\n");
                 Console.WriteLine("A Palavra É: " + finalFoundChars);
-                
-                
+
+
                 Console.WriteLine("Digite uma letra:\n");
                 string initialInput = Console.ReadLine()!.ToUpper();
 
@@ -97,8 +71,6 @@ namespace ForcaAP
                     Console.WriteLine("Informe apenas uma letra.");
                     continue;
                 }
-
-
 
                 char guess = initialInput[0];
 
@@ -138,16 +110,35 @@ namespace ForcaAP
                 {
                     Console.WriteLine($"A Palavra era {chosenWord}\nPressione Enter para sair\n");
                 }
-                
-                
-                
-                
-                
+
+
+
+
+
             } while (rightGuessWord != true && gameOver != true);
-            Console.WriteLine("Jogo Finalizado, Pressione Enter para sair");
-            Console.ReadLine();
-            
-           
+            Console.WriteLine("Jogo Finalizado, Deseja Jogar Novamente? (y/n)");
+            string answer = Console.ReadLine();
+            if (answer == "y")
+            {
+                Game();
+            } else if (answer == "n")
+            {
+                Environment.Exit(0);
+            } else
+            {
+                Console.WriteLine("Opção Inválida");
+                answer = Console.ReadLine();
+            }
+        }
+        
+        
+        
+        
+        
+        static void Main(string[] args)
+        {
+            MainProgram();
+          
         }
     }
 }
